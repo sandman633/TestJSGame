@@ -1,9 +1,8 @@
 const score = document.querySelector('.score'),
 start = document.querySelector('.start'),
 gameArea = document.querySelector('.gameArea'),
-car = document.createElement('div');
+car = document.createElement('div'),
 bgsound = document.createElement('audio');
-
 document.addEventListener('keydown',startRun);
 document.addEventListener('keyup',stopRun);
 start.addEventListener('click',startGame);
@@ -54,6 +53,11 @@ function  startGame(){
         gameArea.appendChild(enemy);
 
     }
+    bgsound.loop = 1;
+    bgsound.scr = '';
+    bgsound.autoplay = 'autoplay';
+    gameArea.appendChild(bgsound);
+
     setting.start = true;
     gameArea.appendChild(car);
     setting.x = car.offsetLeft;
